@@ -1,13 +1,23 @@
 {
   "files": {
-    "main.css": "/event-planner/static/css/main.073c9b0a.css",
-    "main.js": "/event-planner/static/js/main.c85fe8b9.js",
+    "main.css": "/event-planner/static/css/main.2104b3a8.css",
+    "main.js": "/event-planner/static/js/main.46a9b991.js",
+    "static/media/bg.png": "/event-planner/static/media/bg.5493670ecd82ac513f10.png",
+    "static/media/1.jpg": "/event-planner/static/media/1.1e054cabd1567664db1b.jpg",
+    "static/media/points.svg": "/event-planner/static/media/points.39d4afe01652642d2bcccb63937558d6.svg",
     "index.html": "/event-planner/index.html",
-    "main.073c9b0a.css.map": "/event-planner/static/css/main.073c9b0a.css.map",
-    "main.c85fe8b9.js.map": "/event-planner/static/js/main.c85fe8b9.js.map"
+    "static/media/search.svg": "/event-planner/static/media/search.caaa50f9f942fb561248.svg",
+    "static/media/left.svg": "/event-planner/static/media/left.2c81a072e1dd139a458548b00109f965.svg",
+    "static/media/right.svg": "/event-planner/static/media/right.60b561fea91fc0a9935d14a7c07809fc.svg",
+    "static/media/sort.svg": "/event-planner/static/media/sort.5a92dec543a6e2f64bee2f03784de2e7.svg",
+    "static/media/arrow-left.svg": "/event-planner/static/media/arrow-left.790c661e63cf12d9d51b94beb7788d0a.svg",
+    "static/media/category.svg": "/event-planner/static/media/category.2ee52e1e77490c3bc0508e61ae61bca2.svg",
+    "static/media/plus.svg": "/event-planner/static/media/plus.628a4b0990259b23cd3aff5f156c0f8c.svg",
+    "main.2104b3a8.css.map": "/event-planner/static/css/main.2104b3a8.css.map",
+    "main.46a9b991.js.map": "/event-planner/static/js/main.46a9b991.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.c85fe8b9.js"
+    "static/css/main.2104b3a8.css",
+    "static/js/main.46a9b991.js"
   ]
 }
