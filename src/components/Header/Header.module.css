@@ -1,0 +1,132 @@
+.container {
+  border-bottom: 1px solid #7b61ff;
+  margin: 0 auto;
+}
+.inner {
+  margin: 0 auto;
+  background: #fefcff;
+  height: 168px;
+  padding: 24px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    height: 92px;
+    padding: 26px 40px 18px 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .inner {
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.logo {
+  width: 100%;
+  margin: 0 auto;
+  color: #7b61ff;
+  font-family: Alata;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 767px) {
+  .select {
+    justify-self: end;
+    width: 69px;
+    padding: 12px 4px 12px 12px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+    height: 48px;
+
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .select {
+    margin-left: 24px;
+    width: 69px;
+    padding: 12px 4px 12px 12px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+    height: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inputContainer {
+    width: 272px;
+    position: relative;
+    justify-self: center;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+.input {
+  margin-top: 24px;
+  padding: 12px 12px 12px 48px;
+}
+
+@media (min-width: 768px) {
+  .input {
+    margin-top: 0;
+    width: 368px;
+    height: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .input {
+    width: 410px;
+  }
+}
+
+.input:focus {
+  outline: 1px solid #7b61ff;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer::before {
+  content: "";
+  background: url("../../icons/search.svg") no-repeat center;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 36px;
+  left: 12px;
+}
+
+@media (min-width: 768px) {
+  .inputContainer::before {
+    top: 12px;
+    left: 12px;
+  }
+}

@@ -1,0 +1,23 @@
+.backContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.arrowWrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  color: #7b61ff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
