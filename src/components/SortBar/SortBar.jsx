@@ -18,7 +18,7 @@ export const SortBar = ({ selectedCategory, onCategoryChange }) => {
 
   return (
     <div className={styles.sortBar}>
-      <div className={styles.category} onClick={toggleModal}>
+      <div className={styles.category} onClick={toggleModal} ref={sortIconRef}>
         <span className={styles.icon}>
           <Category />
         </span>
@@ -26,7 +26,7 @@ export const SortBar = ({ selectedCategory, onCategoryChange }) => {
           <span className={styles.categoryText}> {selectedCategory}</span>
         )}
       </div>
-      <div className={styles.sort} ref={sortIconRef}>
+      <div className={styles.sort}>
         <Sort />
         {screenWidth >= 768 && (
           <span className={styles.sortText}> Sort by</span>

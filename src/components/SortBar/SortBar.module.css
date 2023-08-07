@@ -36,6 +36,7 @@
   justify-content: center;
   width: 56px;
   cursor: pointer;
+  transition: linear 0.3s;
 }
 
 @media (min-width: 768px) {
@@ -44,8 +45,12 @@
   }
 }
 
-.category:hover {
-  color: red;
+.category:hover .categoryText {
+  color: var(--textColor);
+}
+
+.category:hover svg {
+  stroke: var(--textColor);
 }
 
 .icon {
@@ -63,13 +68,14 @@
 }
 
 .sort {
+  display: none;
   border-radius: 8px;
   background: var(--whiteColor);
 
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 
   align-items: center;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   width: 56px;
 }

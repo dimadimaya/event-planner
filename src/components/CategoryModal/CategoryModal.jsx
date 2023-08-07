@@ -26,7 +26,7 @@ export const CategoryModal = ({
   const modalStyle = {
     position: "absolute",
     top: sortIconRect.bottom - 55 + "px",
-    left: sortIconRect.left - 170 + "px",
+    left: sortIconRect.left - 10 + "px",
   };
 
   return (

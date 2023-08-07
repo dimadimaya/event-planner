@@ -41,7 +41,10 @@ export const EventCard = ({
           </div>
           <div className={styles.titleAndDisk}>
             <h3 className={styles.titleCard}>{title}</h3>
-            <p className={styles.description}>{description}</p>
+            <p className={styles.description}>
+              {description.slice(0, 80)}
+              {description.length > 80 && "..."}
+            </p>
             <Link
               to={`/event/${id}`}
               state={{ locat }}

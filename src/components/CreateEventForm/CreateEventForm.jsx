@@ -6,6 +6,7 @@ import image from "../../images/1.jpg";
 import styles from "./CreateEvent.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ButtonBack } from "../ButtonBack/ButtonBack";
+import { uploadImage } from "../../services/api";
 
 export const CreateEventForm = () => {
   const location = useLocation();
@@ -21,6 +22,22 @@ export const CreateEventForm = () => {
     priority: "Medium",
     image: image,
   });
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    try {
+      const imageUrl = await uploadImage(file);
+
+      setFormData((prevData) => ({
+        ...prevData,
+        image: imageUrl,
+      }));
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
+  };
 
   const [inputErrors, setInputErrors] = useState({
     title: false,
@@ -163,10 +180,14 @@ export const CreateEventForm = () => {
             </label>
 
             <label htmlFor="picture">
-              <p className={`${styles.labelText} ${styles.disabled}`}>
-                Add picture
-              </p>
-              <input type="text" name="picture" id="picture" disabled />
+              <p className={`${styles.labelText}`}>Add picture</p>
+              <input
+                type="file"
+                accept="image/*"
+                name="picture"
+                id="picture"
+                onChange={handleImageUpload}
+              />
             </label>
 
             <label htmlFor="priority">
