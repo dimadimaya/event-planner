@@ -9,14 +9,11 @@ export const EditEventForm = () => {
   const location = useLocation();
   const { eventId } = useParams();
   const backLinkHref = location.state?.location ?? `/event/${eventId}`;
-  console.log(eventId);
 
   const selectEventById = (state, eventId) => {
     return state.events.events.find((event) => event.id === eventId);
   };
-  console.log(selectEventById);
   const event = useSelector((state) => selectEventById(state, eventId));
-  console.log(event);
 
   const dispatch = useDispatch();
 

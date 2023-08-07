@@ -13,9 +13,9 @@ export const EventCardFullInfo = () => {
   const selectEventById = (state, eventId) => {
     return state.events.events.find((event) => event.id === eventId);
   };
-  console.log(selectEventById);
+
   const formData = useSelector((state) => selectEventById(state, eventId));
-  console.log(formData);
+
   const {
     title,
     image,
@@ -26,12 +26,10 @@ export const EventCardFullInfo = () => {
     location,
     description,
   } = formData;
-  console.log(eventId);
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(deleteEvent({ eventId }));
     navigate("/", { replace: true });
-    console.log(eventId);
   };
 
   const handleEdit = () => {

@@ -10,7 +10,7 @@
   align-items: center;
   padding: 18px 24px;
   border-radius: 8px;
-  background: #fff;
+  background: var(--whiteColor);
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
   gap: 8px;
 }
@@ -28,11 +28,11 @@
 }
 
 .paginationItem:hover {
-  color: #7b61ff;
+  color: var(--textColor);
 }
 
 .active {
-  color: #7b61ff;
+  color: var(--textColor);
   text-align: center;
   font-family: Poppins;
   font-size: 18px;
@@ -43,10 +43,10 @@
 
 .paginationLink svg {
   cursor: pointer;
-  fill: #aca7c3;
+  fill: var(--bgcBtnDisabled);
   transition: fill 0.3s;
 }
 
 .paginationLink:hover svg {
-  fill: #7b61ff;
+  fill: var(--textColor);
 }

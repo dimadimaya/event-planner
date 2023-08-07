@@ -6,7 +6,7 @@
 
 .add {
   border-radius: 8px;
-  background: #7b61ff;
+  background: var(--bgcBtn);
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
   padding: 16px;
   display: flex;
@@ -21,13 +21,13 @@
 }
 
 .addText {
-  color: #fff;
+  color: var(--whiteColor);
   margin-left: 16px;
 }
 
 .category {
   border-radius: 8px;
-  background: #fff;
+  background: var(--whiteColor);
 
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 
@@ -44,8 +44,16 @@
   }
 }
 
+.category:hover {
+  color: red;
+}
+
+.icon {
+  stroke: var(--titleColor);
+}
+
 .categoryText {
-  color: #3f3f3f;
+  color: var(--titleColor);
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
@@ -56,7 +64,7 @@
 
 .sort {
   border-radius: 8px;
-  background: #fff;
+  background: var(--whiteColor);
 
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 
@@ -73,7 +81,7 @@
 }
 
 .sortText {
-  color: #3f3f3f;
+  color: var(--titleColor);
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;

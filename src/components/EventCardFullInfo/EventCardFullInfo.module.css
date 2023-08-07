@@ -12,40 +12,22 @@ img {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 42px 40px;
-  max-width: 1280px;
+  padding: 42px 24px;
+  /* max-width: 480px; */
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .inner {
     padding: 42px 40px;
+    /* max-width: 1280px; */
   }
 }
 
-.backContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.arrowWrapper {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 8px;
-}
-
-.back {
-  display: flex;
-  align-items: center;
-  color: #7b61ff;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-decoration: none;
+@media (min-width: 1280px) {
+  .inner {
+    padding: 42px 80px;
+  }
 }
 
 .eventCardContainer {
@@ -65,7 +47,7 @@ img {
 
 .title {
   text-align: left;
-  color: #3f3f3f;
+  color: var(--titleColor);
   font-family: Poppins;
   font-size: 24px;
   font-style: normal;
@@ -82,13 +64,18 @@ img {
 }
 
 .eventCard {
-  max-width: 480px;
-  background-color: #fff;
+  background-color: var(--whiteColor);
 }
 
 @media (min-width: 768px) {
   .eventCard {
-    max-width: 960px;
+    width: 688px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .eventCard {
+    width: 628px;
   }
 }
 
@@ -113,12 +100,12 @@ img {
 }
 
 .description {
-  color: #49454f;
+  color: var(--textEventCardColor);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
   margin-bottom: 24px;
 }
 
@@ -129,7 +116,7 @@ img {
 }
 
 .category {
-  color: #7b61ff;
+  color: var(--textColor);
   text-align: center;
   font-family: Poppins;
   font-size: 14px;
@@ -137,13 +124,13 @@ img {
   font-weight: 500;
   line-height: 20px;
   border-radius: 8px;
-  background: #fff;
+  background: var(--whiteColor);
   box-shadow: 4px 5px 9px 0px rgba(166, 141, 174, 0.28);
   padding: 6px 12px;
 }
 
 .priority {
-  color: #7b61ff;
+  color: var(--textColor);
   text-align: center;
   font-family: Poppins;
   font-size: 14px;
@@ -151,13 +138,13 @@ img {
   font-weight: 500;
   line-height: 20px;
   border-radius: 8px;
-  background: #fff;
+  background: var(--whiteColor);
   box-shadow: 4px 5px 9px 0px rgba(166, 141, 174, 0.28);
   padding: 6px 12px;
 }
 
 .location {
-  color: #7b61ff;
+  color: var(--textColor);
   text-align: center;
   font-family: Poppins;
   font-size: 14px;
@@ -165,17 +152,17 @@ img {
   font-weight: 500;
   line-height: 20px;
   border-radius: 8px;
-  background: #fff;
+  background: var(--whiteColor);
   box-shadow: 4px 5px 9px 0px rgba(166, 141, 174, 0.28);
   padding: 6px 12px;
 }
 
 .time {
   border-radius: 8px;
-  background: #fff;
+  background: var(--whiteColor);
   box-shadow: 4px 5px 9px 0px rgba(166, 141, 174, 0.28);
   padding: 6px 12px;
-  color: #7b61ff;
+  color: var(--textColor);
   text-align: center;
   font-family: Poppins;
   font-size: 14px;
@@ -208,9 +195,9 @@ img {
 .edit {
   width: 108px;
   border-radius: 8px;
-  background-color: #fff;
-  color: #7b61ff;
-  border: 1px solid #7b61ff;
+  background-color: var(--whiteColor);
+  color: var(--textColor);
+  border: 1px solid var(--textColor);
   padding: 8px 16px;
   text-decoration: none;
   transition: linear 0.3s;
@@ -218,8 +205,8 @@ img {
 }
 
 .edit:hover {
-  background: #6243ff;
-  color: #fff;
+  background: var(--bgcBtnHover);
+  color: var(--whiteColor);
 }
 
 .delete {
@@ -227,13 +214,13 @@ img {
 }
 
 .low-priority {
-  color: #6bd475;
+  color: var(--lowPriority);
 }
 
 .medium-priority {
-  color: #e2a300;
+  color: var(--mediumPriority);
 }
 
 .high-priority {
-  color: #ff2b77;
+  color: var(--highPriority);
 }

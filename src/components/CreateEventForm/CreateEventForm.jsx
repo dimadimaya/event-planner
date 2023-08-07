@@ -32,8 +32,6 @@ export const CreateEventForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    console.log("Value:", value);
-    console.log("checkValidity:", e.target.checkValidity());
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,

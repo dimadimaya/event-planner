@@ -10,7 +10,7 @@ export const Home = () => {
   const events = useSelector((state) => state.events.events);
   const filter = useSelector(getFilter);
 
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("Category");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
@@ -19,7 +19,7 @@ export const Home = () => {
       .toLowerCase()
       .includes(filter.toLowerCase());
     const categoryMatchesFilter =
-      selectedCategory === "all" || event.category === selectedCategory;
+      selectedCategory === "Category" || event.category === selectedCategory;
     return titleMatchesFilter && categoryMatchesFilter;
   });
 
@@ -32,52 +32,53 @@ export const Home = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div className={styles.inner}>
-        <div className={styles.sortAndTitle}>
-          <SortBar
-            selectedCategory={selectedCategory}
-            onCategoryChange={setSelectedCategory}
+        <div className={styles.innerInner}>
+          <div className={styles.sortAndTitle}>
+            <SortBar
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+            />
+            <h2 className={styles.title}>My events</h2>
+          </div>
+          <ul className={styles.list}>
+            {currentItems.map(
+              ({
+                id,
+                title,
+                description,
+                date,
+                time,
+                location,
+                category,
+                priority,
+                image,
+              }) => (
+                <EventCard
+                  key={id}
+                  id={id}
+                  title={title}
+                  description={description}
+                  date={date}
+                  time={time}
+                  location={location}
+                  category={category}
+                  priority={priority}
+                  image={image}
+                />
+              )
+            )}
+          </ul>
+
+          <Pagination
+            itemsPerPage={itemsPerPage}
+            totalItems={filteredEvents.length}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
           />
-          <h2 className={styles.title}>My events</h2>
         </div>
-
-        <ul className={styles.list}>
-          {currentItems.map(
-            ({
-              id,
-              title,
-              description,
-              date,
-              time,
-              location,
-              category,
-              priority,
-              image,
-            }) => (
-              <EventCard
-                key={id}
-                id={id}
-                title={title}
-                description={description}
-                date={date}
-                time={time}
-                location={location}
-                category={category}
-                priority={priority}
-                image={image}
-              />
-            )
-          )}
-        </ul>
-
-        <Pagination
-          itemsPerPage={itemsPerPage}
-          totalItems={filteredEvents.length}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
       </div>
-    </div>
+    </main>
   );
 };

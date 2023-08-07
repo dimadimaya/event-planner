@@ -1,4 +1,6 @@
 import styles from "./CategoryModal.module.css";
+import { ReactComponent as Category } from "../../icons/category.svg";
+import { useEffect } from "react";
 
 export const CategoryModal = ({
   isOpen,
@@ -6,31 +8,38 @@ export const CategoryModal = ({
   onCategoryChange,
   anchorElement,
 }) => {
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const sortIconRect = anchorElement.getBoundingClientRect();
   const modalStyle = {
     position: "absolute",
     top: sortIconRect.bottom - 55 + "px",
-    left: sortIconRect.left - 80 + "px",
-
-    "@media (minWidth: 768px)": {
-      top: sortIconRect.bottom - 55 + "px",
-      left: sortIconRect.left - 500 + "px",
-    },
+    left: sortIconRect.left - 170 + "px",
   };
 
   return (
-    <div className={styles.modalOverlay}>
+    <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} style={modalStyle}>
         <button
           className={`${styles.btn} ${styles.borderBottom}`}
           onClick={() => {
-            onCategoryChange("all");
+            onCategoryChange("Category");
             onClose();
           }}
         >
-          All
+          <Category className={styles.icon} /> Category
         </button>
         <button
           className={styles.btn}

@@ -1,3 +1,19 @@
+:root {
+  --whiteColor: #fff;
+  --bgcHeader: #fefcff;
+  --titleColor: #3f3f3f;
+  --titleEventCardColor: #1c1b1f;
+  --textEventCardColor: #49454f;
+  --textColor: #7b61ff;
+  --bgcBtn: #7b61ff;
+  --bgcBtnHover: #6243ff;
+  --bgcBtnDisabled: #aca7c3;
+  --outlineColor: #aca7c3;
+  --highPriority: #ff2b77;
+  --mediumPriority: #e2a300;
+  --lowPriority: #6bd475;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -37,8 +53,8 @@ ul {
 }
 
 button {
-  background: #7b61ff;
-  color: #fff;
+  background: var(--bgcBtn);
+  color: var(--whiteColor);
   cursor: pointer;
   padding: 16px 12px;
   outline: none;
@@ -54,13 +70,13 @@ button {
 }
 
 button:hover {
-  background: #6243ff;
-  color: #fff;
+  background: var(--bgcBtnHover);
+  color: var(--whiteColor);
   cursor: pointer;
 }
 
 button:disabled {
   border-radius: 8px;
-  background: #aca7c3;
-  color: #fff;
+  background: var(--bgcBtnDisabled);
+  color: var(--whiteColor);
 }

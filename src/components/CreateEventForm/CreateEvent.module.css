@@ -3,14 +3,24 @@
 }
 
 .inner {
-  margin: 0 auto;
   padding: 42px 24px;
-  background-position: left;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1280px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 42px 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .inner {
+    padding: 18px 40px;
+  }
 }
 
 .form {
@@ -100,12 +110,12 @@ label {
   position: relative;
   width: 100%;
   max-width: 480px;
-  color: #7b61ff;
+  color: var(--textColor);
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16px; /* 100% */
+  line-height: 16px;
   letter-spacing: 0.4px;
   margin-bottom: 8px;
   margin-top: 20px;
@@ -128,7 +138,7 @@ textarea {
   max-width: 480px;
   border-radius: 8px;
   border: transparent;
-  outline: 1px solid #aca7c3;
+  outline: 1px solid var(--outlineColor);
   padding: 16px 12px;
   color: #3f3f3f;
   font-family: Poppins;
@@ -148,11 +158,11 @@ textarea {
 
 .input:focus-visible,
 textarea:focus {
-  outline: 1px solid #7b61ff;
+  outline: 1px solid var(--textColor);
 }
 
 .invalidInput {
-  outline: 1px solid red;
+  outline: 1px solid var(--highPriority);
 }
 
 @media (min-width: 768px) {
@@ -165,7 +175,7 @@ textarea:focus {
   position: absolute;
   bottom: -20px;
   right: 19px;
-  color: #ff2b77;
+  color: var(--highPriority);
   text-align: right;
   font-family: Poppins;
   font-size: 12px;
@@ -200,16 +210,16 @@ textarea:focus {
 }
 
 .disabled {
-  color: #aca7c3;
+  color: var(--bgcBtnDisabled);
 }
 
 select {
-  color: var(--text, #3f3f3f);
+  color: var(--titleColor);
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
 }
 
 select:hover {
@@ -219,7 +229,7 @@ select:hover {
 select option {
   padding: 16px;
   height: 56px;
-  color: #3f3f3f;
+  color: var(--textColor);
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;

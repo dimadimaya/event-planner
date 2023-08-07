@@ -1,5 +1,7 @@
 .modalOverlay {
   position: fixed;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   display: flex;
@@ -12,23 +14,41 @@
   display: flex;
   flex-direction: column;
   width: 158px;
-  background-color: #fff;
+  background-color: var(--whiteColor);
   border-radius: 8px;
   z-index: 1;
   overflow: hidden;
 }
 
 .modalContent button:not(:last-child) {
-  border-bottom: 1px solid #aca7c3;
+  border-bottom: 1px solid var(--outlineColor);
+}
+
+.modalContent button:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 56px;
+  color: var(--titleColor);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.modalContent button:first-child:hover {
+  color: var(--textColor);
 }
 
 .modalContent button:not(:last-child):hover {
-  border-bottom: 1px solid #7b61ff;
+  border-bottom: 1px solid var(--bgcBtn);
 }
 
 .btn {
-  background-color: #fff;
-  color: #aca7c3;
+  background-color: var(--whiteColor);
+  color: var(--bgcBtnDisabled);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -37,6 +57,16 @@
 }
 
 .btn:hover {
-  background-color: #fff;
-  color: #7b61ff;
+  background-color: var(--whiteColor);
+  color: var(--bgcBtn);
+}
+
+.icon {
+  margin-right: 8px;
+  stroke: var(--titleColor);
+  transition: linear 0.3s;
+}
+
+.btn:hover svg {
+  stroke: var(--textColor);
 }
