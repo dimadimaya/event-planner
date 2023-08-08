@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import { CreateEvent } from "./pages/CreateEvent/CreateEvent";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { Layout } from "./components/Layout/Layout";
@@ -14,7 +13,6 @@ function App() {
         <Route path="/create" element={<CreateEvent />} />
         <Route path="/event/:eventId" element={<Event />} />
         <Route path="/edit/:eventId" element={<EditEvent />} />
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Route>
     </Routes>
   );
