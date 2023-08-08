@@ -1,12 +1,11 @@
-const cloudName = process.env.REACT_APP_CLOUD_NAME;
-const uploadPreset = process.env.REACT_APP_UPLOAD_PRESET;
+const cloudName = "dyytcbvac";
+const uploadPreset = "ezasof0q";
 
 export const uploadImage = async (file) => {
   try {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", uploadPreset);
-
     const response = await fetch(
       `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
       {

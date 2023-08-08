@@ -4,17 +4,14 @@ import { deleteEvent } from "../../Redux/eventsSlice";
 import styles from "./EventCardFullInfo.module.css";
 import { ButtonBack } from "../ButtonBack/ButtonBack";
 import { formatDate } from "../../utils/formatDate";
+import { selectEventById } from "../../Redux/selectors";
 
 export const EventCardFullInfo = () => {
   const locat = useLocation();
   const navigate = useNavigate();
   const backLinkHref = locat.state?.location ?? "/";
   const { eventId } = useParams();
-  const selectEventById = (state, eventId) => {
-    return state.events.events.find((event) => event.id === eventId);
-  };
-
-  const formData = useSelector((state) => selectEventById(state, eventId));
+  const event = useSelector((state) => selectEventById(state, eventId));
 
   const {
     title,
@@ -25,7 +22,7 @@ export const EventCardFullInfo = () => {
     time,
     location,
     description,
-  } = formData;
+  } = event;
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(deleteEvent({ eventId }));

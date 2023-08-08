@@ -14,7 +14,11 @@ export const Header = () => {
       <div className={styles.inner}>
         <div className={styles.innerInner}>
           <div className={styles.header}>
-            <h3 className={styles.logo}>Event Planner</h3>
+            <div className={styles.logoContainer}>
+              <a className={styles.logo} href="/event-planner">
+                Event Planner
+              </a>
+            </div>
             <div className={styles.inputContainer}>
               <input
                 type="text"

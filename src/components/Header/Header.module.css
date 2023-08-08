@@ -44,9 +44,12 @@
   }
 }
 
-.logo {
+.logoContainer {
   width: 100%;
   margin: 0 auto;
+}
+
+.logo {
   color: var(--textColor);
   font-family: Alata;
   font-size: 24px;

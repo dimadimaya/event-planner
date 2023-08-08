@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "./Home.module.css";
-import { getFilter } from "../../Redux/selectors";
+import { getEvents, getFilter } from "../../Redux/selectors";
 import { SortBar } from "../SortBar/SortBar";
 import { EventCard } from "../EventCard/EventCard";
 import { Pagination } from "../Pagination/Pagination";
 
 export const Home = () => {
-  const events = useSelector((state) => state.events.events);
+  const events = useSelector(getEvents);
   const filter = useSelector(getFilter);
 
   const [selectedCategory, setSelectedCategory] = useState("Category");

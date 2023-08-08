@@ -3,6 +3,7 @@ import { editEvent } from "../../Redux/eventsSlice";
 import styles from "./EditEventForm.module.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ButtonBack } from "../ButtonBack/ButtonBack";
+import { selectEventById } from "../../Redux/selectors";
 
 export const EditEventForm = () => {
   const navigate = useNavigate();
@@ -10,9 +11,6 @@ export const EditEventForm = () => {
   const { eventId } = useParams();
   const backLinkHref = location.state?.location ?? `/event/${eventId}`;
 
-  const selectEventById = (state, eventId) => {
-    return state.events.events.find((event) => event.id === eventId);
-  };
   const event = useSelector((state) => selectEventById(state, eventId));
 
   const dispatch = useDispatch();
@@ -23,6 +21,7 @@ export const EditEventForm = () => {
       editEvent({
         id: eventId,
         updatedEvent: {
+          ...event,
           [name]: value,
         },
       })
@@ -95,7 +94,12 @@ export const EditEventForm = () => {
             </label>
             <label htmlFor="category">
               <p className={styles.labelText}>Category</p>
-              <select name="category" id="category" onChange={handleChange}>
+              <select
+                name="category"
+                id="category"
+                onChange={handleChange}
+                value={event.category}
+              >
                 <option value="Art">Art</option>
                 <option value="Music">Music</option>
                 <option value="Business">Business</option>
@@ -107,10 +111,15 @@ export const EditEventForm = () => {
             </label>
             <label htmlFor="priority">
               <p className={styles.labelText}>Priority</p>
-              <select name="priority" id="priority" onChange={handleChange}>
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
+              <select
+                name="priority"
+                id="priority"
+                onChange={handleChange}
+                value={event.priority}
+              >
                 <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
               </select>
             </label>
           </div>

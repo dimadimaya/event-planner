@@ -186,6 +186,7 @@ export const CreateEventForm = () => {
                 accept="image/*"
                 name="picture"
                 id="picture"
+                title="Оберіть файл"
                 onChange={handleImageUpload}
               />
             </label>
